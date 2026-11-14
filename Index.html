@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompoundPro | Interest Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">📈 CompoundPro</div>
+        <nav>
+            <a href="#calculator">Calculator</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="tag">SMART FINANCIAL CALCULATOR</p>
+            <h1>Make your money <span>grow.</span></h1>
+            <p>Discover the power of compound interest.</p>
+        </section>
+
+        <section class="calculator" id="calculator">
+            <div class="inputs">
+                <h2>Your investment</h2>
+
+                <label>Initial investment (€)</label>
+                <input id="amount" type="number" value="1000" min="0" step="any">
+
+                <label>Annual interest rate (%)</label>
+                <input id="rate" type="number" value="5" min="0" max="100" step="any">
+
+                <label>Investment duration (years)</label>
+                <input id="years" type="number" value="10" min="0" max="1000" step="any">
+
+                <label>Compounding frequency</label>
+                <select id="frequency">
+                    <option value="1">Annually</option>
+                    <option value="2">Semi-annually</option>
+                    <option value="4">Quarterly</option>
+                    <option value="12">Monthly</option>
+                    <option value="365">Daily</option>
+                </select>
+
+                <button id="calculate">Calculate growth →</button>
+                <button id="reset" class="reset">Reset</button>
+            </div>
+
+            <div class="results">
+                <h2>Your results</h2>
+                <p class="muted">Final investment value</p>
+                <h1 id="total">€1,628.89</h1>
+
+                <div class="result-box">
+                    <span>Initial investment</span>
+                    <strong id="initial">€1,000.00</strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Interest earned</span>
+                    <strong class="green" id="interest">€628.89</strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Total growth</span>
+                    <strong class="green" id="growth">62.89%</strong>
+                </div>
+
+                <h3>Investment growth</h3>
+                <canvas id="chart" width="600" height="200"></canvas>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>What is compound interest?</h2>
+            <p>
+                Compound interest is interest calculated on both your
+                original investment and previously earned interest.
+                Over time, this can make your money grow faster.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 CompoundPro | Built with HTML, CSS & JavaScript
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
